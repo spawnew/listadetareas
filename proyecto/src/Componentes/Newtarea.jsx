@@ -19,7 +19,7 @@ const Newtarea = ({setear}) => {
     <div>
     <form onSubmit={submit}>
     
-
+   
    
     <input type="text"
     placeholder='ingrese una tarea'

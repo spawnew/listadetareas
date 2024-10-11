@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Newtarea from './Newtarea'
+import { FiTrash2 } from "react-icons/fi";
+import './tareas.css';
 const Tarea = () => {
  
 
@@ -15,13 +17,13 @@ const borrar=(index)=>{
  
     return (
 
-    <div><h1>Lista de tareas </h1>
+    <div className='listatarea'><h1>Lista de tareas </h1>
    {listaTarea.map((tareas, index)=>{
      
-     return <div>
+     return <div className='tareas'>
       <h1>{tareas}</h1>
     
-      <button onClick={()=>borrar(index)}>borrar</button>
+       <button onClick={() => borrar(index)}><FiTrash2 /></button>
     </div>
    })}
   
