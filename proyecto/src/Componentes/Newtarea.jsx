@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 
-const Newtarea = () => {
+const Newtarea = ({setear}) => {
  
  const [input,setinput]=useState("")
  
  const agregar=(e)=>{
-    setinput(e.input.target.value)
+    setinput(e.target.value)
  }
    const submit=(e)=>{
     e.preventDefault(); 
-    setinput(e.input.target.value)
+    setear(input)
+    setinput("")
    }
  
- 
+
  
  return (
     <div>

@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Newtarea from './Newtarea'
 const Tarea = () => {
  
- const AgregarTarea= ()=>{
-    return <Newtarea/>
+
+ const [listaTarea,setlista]=useState([])
+const borrar=(index)=>{
+  const nuevasTareas = listaTarea.filter((_, i) => i !== index);
+    setlista(nuevasTareas);
+}
+ const setear = (input)=>{
+   setlista([...listaTarea,input])
  }
- const listaTarea
  
  
     return (
+
     <div><h1>Lista de tareas </h1>
+   {listaTarea.map((tareas, index)=>{
+     
+     return <div>
+      <h1>{tareas}</h1>
     
+      <button onClick={()=>borrar(index)}>borrar</button>
+    </div>
+   })}
+  
     
-    
-    
-    
-    
-    <button onClick={AgregarTarea} ><p>Agregar una tarea</p></button>
+    <Newtarea setear={setear}/>
     </div>
  
 
